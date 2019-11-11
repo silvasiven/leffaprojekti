@@ -50,7 +50,7 @@ public class LeffaprojektiApplication {
 		kRepository.save(new Kategoria("Hyllyssä"));
 		kRepository.save(new Kategoria("Myynnissä"));
 		
-		lRepository.save(new Leffa("Blade Runner","Scifi","Ridley Scott","Harrison Ford",kRepository.findByNimi("Hyllyssä").get(0)));
+		lRepository.save(new Leffa("Blade Runner","Scifi","Ridley Scott","Harrison Ford", kRepository.findByNimi("Hyllyssä").get(0)));
 		lRepository.save(new Leffa("Hannibal","Trilleri","Ridley Scott","Anthony Hopkins",kRepository.findByNimi("Lainassa").get(0)));
 		lRepository.save(new Leffa("Ring","Kauhu","Gore Verbinski","Naomi Watts",kRepository.findByNimi("Myynnissä").get(0)));
 

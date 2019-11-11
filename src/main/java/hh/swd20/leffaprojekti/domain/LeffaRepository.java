@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface LeffaRepository extends CrudRepository <Leffa, Long> {
 
  List<Leffa> findByNimi(String nimi);
+// Leffa findById(Long id);
 }

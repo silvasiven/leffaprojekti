@@ -35,7 +35,7 @@
 			<td th:text="${leffa.paanayttelija}">paanayttelija</td>
 			<td th:text="${leffa.kategoria.nimi}">tila</td>
 			<td th:text="${leffa.varaaja}">varaaja</td>
-		
+			
 			<td><a th:href="@{/varaa/{id}(id=${leffa.id})}" class="btn btn-warning">Varaa elokuva</a></td>
 			<td sec:authorize="hasAuthority('ADMIN')"> <a th:href="@{/edit/{id}(id=${leffa.id})}" class="btn btn-primary">Muokkaa</a></td>
 			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${leffa.id})}" class="btn btn-danger">Poista</a></td>    		

@@ -89,28 +89,29 @@ public class LeffaController {
 			return "redirect:leffalista";
 		}
 		
-	// varaaja/käyttäjä tekee uuden varauksen
+	// Lähettää ja avaa varauslomakkeen
 	@RequestMapping(value="/varaa/{id}", method=RequestMethod.GET)
 	public String newVaraus(@PathVariable("id") Long leffaId, Model model) {
+	//	Leffa leffa = lRepository.findById(leffaId);
 		model.addAttribute("leffa",lRepository.findById(leffaId));
 		model.addAttribute("varaaja", new Varaaja());
-	
-	
 	//	leffa.setId(leffaId);
-	//	model.addAttribute("leffa",leffa);
+		model.addAttribute("leffaId",leffaId);
 		return "teevaraus";
 		
 	}
 	//tallentaa uuden varauksen
 	@RequestMapping(value="/tallennavaraus", method=RequestMethod.POST)
-	public String save(Varaaja varaaja, @RequestParam(name="Leffaid") Long leffaid,Model model) {
-		model.addAttribute("leffa",lRepository.findById(leffaid));
-		Long varaajaid = leffaid;
+	public String save(Varaaja varaaja, @RequestParam(name="leffaId") Long leffaid,Model model) {
+		//Leffa leffa = lRepository.findById(leffaid);
+	//	Long varaajaid = leffaid;
 	//	varaaja.setVaraajaid(leffaid);
 		vRepository.save(varaaja);
-		
-	
-		
+		Optional <Leffa> leffa1 = lRepository.findById(leffaid);
+		Leffa leffa = leffa1.get();
+		leffa.setId(leffaid);
+		leffa.setVaraaja(varaaja);
+		lRepository.save(leffa);
 		return "redirect:leffalista";
 	}
 		

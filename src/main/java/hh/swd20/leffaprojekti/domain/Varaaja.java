@@ -101,7 +101,7 @@ public class Varaaja {
 	@Override
 	public String toString() {
 		return "Varaaja [varaajaid=" + varaajaid + ", nimi=" + nimi + ", puhelinnumero=" + puhelinnumero
-				+ ", lisatiedot=" + lisatiedot + ", leffat=" + leffat + ", varaus=" + varaus + "]";
+				+ ", lisatiedot=" + lisatiedot + ", varaus=" + varaus + "]";
 	}
 
 
