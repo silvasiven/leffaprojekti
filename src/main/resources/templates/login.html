@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+        <title>Login</title>
+        <h1> Kirjaudu sisään</h1>
+    </head>
+    <body>
+        <div th:if="${param.error}" class="col-md3" style="padding:20px 0">
+            Käyttäjänimi ja salasana väärä.
+        </div>
+        <div th:if="${param.logout}">
+            Olet kirjautunut ulos.
+        </div>
+        <form th:action="@{/login}" method="post" class="form-inline" style="padding:20px 0">
+            <div class="form-group" >
+           		 <label class="sr-only">Syötä käyttäjänimi</label>
+            	 <input type="text" name="username" placeholder="Käyttäjänimi"/>
+            </div>
+            <div class="form-group">
+            	<label class="sr-only"> salasana</label>
+            	<input type="password" name="password" placeholder="Salasana"/> 
+           </div>
+            <div class="form-group">
+            <input type="submit" value="Kirjaudu sisään"/>
+            </div>
+        </form>
+    </body>
+</html>

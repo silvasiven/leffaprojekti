@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Tee varaajatiedot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<h1>Lisää varaustietosi</h1>
+<div>
+		<form th:object="${varaaja}" th:action="@{../tallennavaraus}" action="#" method="post">
+		<input type="hidden" th:field="*{id}"/>
+		  	<label for="nimi">Nimi</label>
+			<input type="text" th:field="*{nimi}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="puhelinnumero">Puhelinnumero</label>
+			<input type="text" th:field="*{puhelinnumero}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="lisatiedot">Lisätiedot</label>
+			<input type="text" th:field="*{lisatiedot}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			
+			<input type="submit" value="Lähetä pyyntö"></input>
+		</form>
+	</div>
+	
+
+</body>
+</html>

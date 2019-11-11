@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<title>Tee varaus</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div >
+	<h1>Tee varaus elokuvaan</h1>
+
+		<form th:object="${varaaja}" th:action="@{../tallennavaraus}" action="#" method="post" class="form-horizontal">
+		
+		  	<label for="nimi">Nimi</label>
+			<input type="text" th:field="*{nimi}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="puhelinnumero">Puhelinnumero</label>
+			<input type="text" th:field="*{puhelinnumero}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="lisatiedot">Lisätiedot</label>
+			<input type="text" th:field="*{lisatiedot}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" value="Lähetä pyyntö" class="btn btn-success"></input>
+		</form>
+	</div>
+	
+
+</body>
+</html>
