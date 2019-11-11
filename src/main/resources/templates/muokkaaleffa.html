@@ -10,7 +10,7 @@
 		<form th:object="${leffa}" th:action="@{../tallenna}" action="#" method="post" class="form-group">
 		  	<input type="hidden" th:field="*{id}"/>
 		  	<label for="nimi">Nimi</label>
-			<input type="text" th:field="*{nimi}" />
+			<input type="text" th:field="*{nimi}"  required/>
 		  	<label for="genre">Genre</label>
 			<input type="text" th:field="*{genre}" />
 		  	<label for="ohjaaja">Ohjaaja</label>
@@ -20,7 +20,7 @@
 			
 								
 		  	<label for="tilalist">Tila</label>
-			 <select id="tilalist" th:field="*{kategoria}" class="form-control">
+			 <select id="tilalist" th:field="*{kategoria}" class="form-control" required>
        			<option th:each="kategoria: ${kategoriat}" th:value="${kategoria.kategoriaId}" th:text="${kategoria.nimi}"></option>
     		</select>
 			

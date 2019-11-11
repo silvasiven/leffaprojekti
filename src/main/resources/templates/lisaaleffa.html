@@ -11,7 +11,7 @@
 <div>
 		<form th:object="${leffa}" th:action="@{tallenna}" action="#" method="post" class="form-group" >
 		  	<label for="nimi">Nimi</label>
-			<input type="text" th:field="*{nimi}" />
+			<input type="text" th:field="*{nimi}" required />
 			<div style="clear: both; display: block; height: 10px;"></div>
 		  	<label for="genre">Genre</label>
 			<input type="text" th:field="*{genre}" />
@@ -27,7 +27,7 @@
 		  	<label for="tilalist">Tila</label>
 		  	<div class="col-xs-2">
 			 <select id="tilalist" th:field="*{kategoria}" class="form-control">
-       			<option th:each="kategoria: ${kategoriat}" th:value="${kategoria.kategoriaId}" th:text="${kategoria.nimi}"></option>
+       			<option th:each="kategoria: ${kategoriat}" th:value="${kategoria.kategoriaId}" th:text="${kategoria.nimi}"required></option>
     		</select>
     		</div>
 			<div style="clear: both; display: block; height: 10px;"></div>

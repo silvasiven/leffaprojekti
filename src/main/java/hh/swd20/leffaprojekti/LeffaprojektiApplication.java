@@ -16,7 +16,7 @@ import hh.swd20.leffaprojekti.domain.Kayttaja;
 import hh.swd20.leffaprojekti.domain.KayttajaRepository;
 import hh.swd20.leffaprojekti.domain.Leffa;
 import hh.swd20.leffaprojekti.domain.LeffaRepository;
-
+import hh.swd20.leffaprojekti.domain.Varaaja;
 import hh.swd20.leffaprojekti.domain.VaraajaRepository;
 
 
@@ -49,7 +49,7 @@ public class LeffaprojektiApplication {
 		kRepository.save(new Kategoria("Lainassa"));
 		kRepository.save(new Kategoria("Hyllyssä"));
 		kRepository.save(new Kategoria("Myynnissä"));
-		
+		vRepository.save(new Varaaja("Ville Varaaja","050 123 45600","mahdollisimman pian haluaisin katsoa tämän leffan"));
 		lRepository.save(new Leffa("Blade Runner","Scifi","Ridley Scott","Harrison Ford", kRepository.findByNimi("Hyllyssä").get(0)));
 		lRepository.save(new Leffa("Hannibal","Trilleri","Ridley Scott","Anthony Hopkins",kRepository.findByNimi("Lainassa").get(0)));
 		lRepository.save(new Leffa("Ring","Kauhu","Gore Verbinski","Naomi Watts",kRepository.findByNimi("Myynnissä").get(0)));

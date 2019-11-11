@@ -11,7 +11,7 @@
 		<form th:object="${varaaja}" th:action="@{../tallennavaraus}" action="#" method="post" class="form-horizontal">
 			<input type="hidden" th:value="${leffaId}" name="leffaId"/>
 		  	<label for="nimi">Nimi</label>
-			<input type="text" th:field="*{nimi}" />
+			<input type="text" th:field="*{nimi}"  required/>
 			<div style="clear: both; display: block; height: 10px;"></div>
 		  	<label for="puhelinnumero">Puhelinnumero</label>
 			<input type="text" th:field="*{puhelinnumero}" />

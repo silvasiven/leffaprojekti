@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -42,12 +43,12 @@ public class Varaaja {
 		this.varaus = varaus;
 	}
 
-	public Varaaja(String nimi, String puhelinnumero, String lisatiedot, Varaus varaus) {
+	public Varaaja(String nimi, String puhelinnumero, String lisatiedot) {
 		super();
 		this.nimi = nimi;
 		this.puhelinnumero = puhelinnumero;
 		this.lisatiedot = lisatiedot;
-		this.varaus=varaus;
+		
 	}
 
 
@@ -101,7 +102,7 @@ public class Varaaja {
 	@Override
 	public String toString() {
 		return "Varaaja [varaajaid=" + varaajaid + ", nimi=" + nimi + ", puhelinnumero=" + puhelinnumero
-				+ ", lisatiedot=" + lisatiedot + ", varaus=" + varaus + "]";
+				+ ", lisatiedot=" + lisatiedot  + "]";
 	}
 
 
